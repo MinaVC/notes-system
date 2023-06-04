@@ -1,0 +1,98 @@
+.edit-btn {
+  margin-right: 10px;
+  background: #134b96;
+  border-color: #134b96;
+  &:hover {
+    background: #417fd1;
+  }
+}
+.delete-btn {
+  background: red;
+  border-color: red;
+  transition: 0.3s;
+  &:hover {
+    background: rgb(200, 42, 42) !important;
+  }
+}
+.add-note {
+  margin-bottom: 50px;
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .card {
+    padding: 25px;
+    transition: 0.3;
+
+    .card-body {
+      padding: 0;
+    }
+  }
+
+  .main-title {
+    color: #134b96;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 30px;
+    &.center {
+      font-size: 35px;
+      text-align: center;
+      font-family: cursive;
+    }
+  }
+  .btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn-primary {
+      background-color: #134b96;
+      padding: 10px 50px;
+    }
+  }
+}
+.cards-list {
+  .add-note {
+    margin-bottom: 0;
+  }
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  .card {
+    height: 100%;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.03);
+    }
+    .card-title {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* number of lines to show */
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+    .card-text {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* number of lines to show */
+      line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+.form-group {
+  label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #134b96;
+  }
+}
+.no-data-found {
+  border: 1px solid #134b96;
+  padding: 20px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  border-radius: 12px;
+  color: #134b96;
+}

@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+/****** typography and icons ************/
+@font-face {
+  font-family: "AvantGarde";
+  src: url("./assets/fonts/AvantGarde.eot");
+  src: url("./assets/fonts/AvantGarde.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/AvantGarde.woff2") format("woff2"),
+    url("./assets/fonts/AvantGarde.woff") format("woff"),
+    url("./assets/fonts/AvantGarde.ttf") format("truetype"),
+    url("./assets/fonts/AvantGarde.svg#AvantGarde") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("./assets/fonts/icomoon.eot?tztwda");
+  src: url("./assets/fonts/icomoon.eot?tztwda#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/icomoon.ttf?tztwda") format("truetype"),
+    url("./assets/fonts/icomoon.woff?tztwda") format("woff"),
+    url("./assets/fonts/icomoon.svg?tztwda#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+body {
+  padding: 20px;
+  background-color: #f2fbd1;
+}
+h1,
+h2,
+p,
+span,
+div {
+  font-family: cursive;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pencil:before {
+  content: "\e905";
+}
+.icon-headphones:before {
+  content: "\e910";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+
+/******* general classes **************/
+
+.btn-primary {
+  background: #134b96;
+  border-color: #134b96;
+  &:hover {
+    background: #417fd1 !important;
+  }
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #134b96;
+    border-color: #134b96 transparent #134b96 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  .btn {
+    background: #134b96 !important;
+    transition: 0.3;
+    &:hover {
+      background: #4487df;
+    }
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

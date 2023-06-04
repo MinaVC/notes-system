@@ -1,0 +1,109 @@
+<div class="container">
+  <section class="add-note">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="main-title center">Note-Taking Systems</div>
+
+        <div class="card">
+          <div class="main-title">Add Note</div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                [(ngModel)]="title"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Description</label>
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                [(ngModel)]="description"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="btn-wrapper">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="onCreateNote()"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cards-list">
+    <div class="loader">
+      <div class="lds-dual-ring" *ngIf="isLoading"></div>
+    </div>
+    <div class="row" *ngIf="notes?.length >= 1">
+      <div class="col-lg-4 mb-20" *ngFor="let note of notes; let i = index">
+        <div class="card">
+          <div class="card-body">
+            <div class="add-note" *ngIf="i == editItemIndex">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  [(ngModel)]="editTitle"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Description</label>
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  [(ngModel)]="editDescription"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="btn-wrapper">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="edit(note.id)"
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+            <div *ngIf="i !== editItemIndex">
+              <h5 class="card-title" [title]="note.title">
+                {{ note.title }}
+              </h5>
+              <p class="card-text" [title]="note.description">
+                {{ note.description }}
+              </p>
+              <button
+                class="btn btn-primary edit-btn"
+                (click)="editSection(note, i)"
+                title="Edit"
+              >
+                <i class="icon-pencil"></i>
+              </button>
+              <button
+                class="btn btn-primary delete-btn"
+                (click)="delete(note.id)"
+                title="Delete"
+              >
+                <i class="icon-bin"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="notes?.length < 1">
+      <div class="no-data-found">No Data Found</div>
+    </div>
+  </section>
+</div>
